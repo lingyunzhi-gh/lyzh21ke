@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宝鸡购房决策分析系统 2026 | 50万预算三宝攻略（含雍华公馆深度对比）</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans SC', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+        }
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .progress-bar {
+            transition: width 1s ease-out;
+        }
+        .highlight-card {
+            background: linear-gradient(135deg, #eff6ff 0%, #eef2ff 100%);
+            border: 2px solid #3b82f6;
+        }
+    </style>
+<base target="_blank">
+</head>
+<body class="bg-slate-50 text-slate-800 overflow-x-hidden">
+
+    <!-- 导航栏 -->
+    <nav class="sticky-nav border-b border-slate-200 px-6 py-4 mb-8">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i data-lucide="home" class="w-8 h-8 text-blue-600"></i>
+                <div>
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">宝鸡购房决策系统</h1>
+                    <p class="text-xs text-slate-500">2026年1月版 · 50万预算三宝攻略</p>
+                </div>
+            </div>
+            <div class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
+                <a href="#market" class="hover:text-blue-600 transition">市场行情</a>
+                <a href="#yonghua" class="hover:text-blue-600 transition text-blue-600 font-bold">雍华公馆专题</a>
+                <a href="#compare" class="hover:text-blue-600 transition">小区对比</a>
+                <a href="#finance" class="hover:text-blue-600 transition">财务模型</a>
+                <a href="#decision" class="hover:text-blue-600 transition">决策工具</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 通知栏：雍华公馆新增 -->
+    <div class="max-w-7xl mx-auto px-6 mb-6">
+        <div class="bg-gradient-to-r from-indigo-50 to-blue-50 border border-indigo-200 rounded-2xl p-4 flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center text-white">
+                    <i data-lucide="badge-plus" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-indigo-900">新增对比：雍华公馆深度分析</h3>
+                    <p class="text-sm text-indigo-700">高新二期48万级现房，单价4400-4700元/㎡，同属高新三小教育集团，比大都荟性价比更高</p>
+                </div>
+            </div>
+            <a href="#yonghua" class="px-4 py-2 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700 transition">查看详情</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="max-w-7xl mx-auto px-6 mb-12 animate-fade-in">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-6">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium border border-blue-100">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                    基于2026年1月最新政策数据
+                </div>
+                <h2 class="text-5xl font-black leading-tight">
+                    50万预算在宝鸡<br>
+                    <span class="gradient-text">如何买到最优学区房？</span>
+                </h2>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    针对宝宝上学、交通便利、就医方便三大核心需求，新增<strong>雍华公馆</strong>与大都荟、九悦香等热门小区深度对比，通过房龄结构、物业评级、学区政策、财务模型四维分析，避开销售话术。
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-4 border border-indigo-200">
+                        <div class="text-2xl font-bold text-indigo-600 mb-1">47万</div>
+                        <div class="text-sm text-slate-700 font-medium">雍华公馆100㎡</div>
+                        <div class="text-xs text-slate-500">单价4700元/㎡ | 2020年现房</div>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+                        <div class="text-2xl font-bold text-slate-800 mb-1">52万</div>
+                        <div class="text-sm text-slate-700 font-medium">大都荟90㎡</div>
+                        <div class="text-xs text-slate-500">单价5800元/㎡ | 超预算</div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-3xl blur-3xl opacity-20"></div>
+                <div class="relative glass-card rounded-3xl p-8 shadow-2xl border-2 border-indigo-100">
+                    <div class="absolute top-4 right-4 px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-bold">高性价比</div>
+                    <div class="flex justify-between items-end mb-6">
+                        <div>
+                            <p class="text-sm text-slate-500 mb-1">新增推荐</p>
+                            <h3 class="text-2xl font-bold text-slate-800">雍华公馆D区</h3>
+                            <p class="text-indigo-600 font-semibold">¥4,400-4,700/㎡</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="flex gap-1 mb-1">
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-slate-300"></i>
+                            </div>
+                            <p class="text-xs text-slate-500">绿化率51%</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-600">学区归属</span>
+                            <span class="font-medium text-slate-800">高新三小教育集团</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-600">具体校区</span>
+                            <span class="font-medium text-slate-800">A区→西校区(本部) / B区→北校区(十一小)</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-600">医疗距离</span>
+                            <span class="font-medium text-slate-800">距高新人民医院1.7km</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-600">交通优势</span>
+                            <span class="font-medium text-slate-800">高铁南站旁/30路公交</span>
+                        </div>
+                        <div class="pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-600">108㎡三室总价</span>
+                                <span class="text-2xl font-bold text-green-600">46-50万</span>
+                            </div>
+                            <p class="text-xs text-green-600 mt-1">比大都荟同面积节省6-8万</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 雍华公馆专题分析 -->
+    <section id="yonghua" class="max-w-7xl mx-auto px-6 mb-16 scroll-mt-20">
+        <div class="bg-gradient-to-br from-indigo-600 to-blue-700 rounded-3xl p-8 text-white shadow-xl mb-8">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur">
+                    <i data-lucide="building-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold">雍华公馆深度评测</h3>
+                    <p class="text-indigo-100">高新二期隐藏的性价比之王 vs 大都荟全面对比</p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6 mt-6">
+                <div class="bg-white/10 backdrop-blur rounded-xl p-4 border border-white/20">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i data-lucide="wallet" class="w-5 h-5 text-yellow-300"></i>
+                        <span class="font-bold">价格优势</span>
+                    </div>
+                    <p class="text-sm text-indigo-100">D区二手均价4707元/㎡，较大都荟（5800+）低<span class="text-yellow-300 font-bold">1100元/㎡</span>，100㎡房源总价控制在<strong>47万以内</strong>，符合50万预算。</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur rounded-xl p-4 border border-white/20">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i data-lucide="graduation-cap" class="w-5 h-5 text-yellow-300"></i>
+                        <span class="font-bold">学区解析</span>
+                    </div>
+                    <p class="text-sm text-indigo-100">同属高新三小教育集团，A区划片<strong>西校区（本部）</strong>，B区划片<strong>北校区（高新十一小）</strong>，与大都荟学区等级相当。</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur rounded-xl p-4 border border-white/20">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i data-lucide="layout" class="w-5 h-5 text-yellow-300"></i>
+                        <span class="font-bold">居住品质</span>
+                    </div>
+                    <p class="text-sm text-indigo-100">2020年竣工，绿化率<strong>51%</strong>（高于大都荟），人车分流，车位比1:1.1，但靠近高新四路可能有噪音。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 雍华公馆vs大都荟详细对比 -->
+        <div class="bg-white rounded-3xl shadow-lg border border-slate-200 overflow-hidden">
+            <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 font-bold text-slate-800 flex items-center gap-2">
+                <i data-lucide="git-compare" class="w-5 h-5 text-indigo-600"></i>
+                高新二期核心竞品对比：雍华公馆 vs 大都荟
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead class="bg-slate-50">
+                        <tr>
+                            <th class="px-6 py-4 text-left font-bold text-slate-700">对比维度</th>
+                            <th class="px-6 py-4 text-center font-bold text-indigo-700 bg-indigo-50">雍华公馆D区</th>
+                            <th class="px-6 py-4 text-center font-bold text-slate-700">大都荟</th>
+                            <th class="px-6 py-4 text-center font-bold text-slate-700">胜出方</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200">
+                        <tr>
+                            <td class="px-6 py-4 font-medium">单价（2026.1）</td>
+                            <td class="px-6 py-4 text-center bg-indigo-50/50">
+                                <span class="text-2xl font-bold text-indigo-600">4707</span>
+                                <span class="text-xs text-slate-500">元/㎡</span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="text-2xl font-bold text-slate-800">5800+</span>
+                                <span class="text-xs text-slate-500">元/㎡</span>
+                            </td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-bold">雍华公馆</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 font-medium">50万可购面积</td>
+                            <td class="px-6 py-4 text-center bg-indigo-50/50 font-bold text-indigo-900">100-108㎡ 三室</td>
+                            <td class="px-6 py-4 text-center text-slate-600">90㎡ 两室（超预算）</td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-bold">雍华公馆</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 font-medium">学区归属</td>
+                            <td class="px-6 py-4 text-center bg-indigo-50/50">
+                                高新三小教育集团<br>
+                                <span class="text-xs text-slate-500">(A区本部/B区十一小)</span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                高新三小教育集团<br>
+                                <span class="text-xs text-slate-500">(北校区/高新十一小)</span>
+                            </td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs">相当</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 font-medium">房龄</td>
+                            <td class="px-6 py-4 text-center bg-indigo-50/50">2020年竣工（4代房）</td>
+                            <td class="px-6 py-4 text-center">2020年交付（4代房）</td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs">相当</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 font-medium">距高新人民医院</td>
+                            <td class="px-6 py-4 text-center bg-indigo-50/50">1.7km</td>
+                            <td class="px-6 py-4 text-center">1.0km</td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs">大都荟</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 font-medium">绿化率</td>
+                            <td class="px-6 py-4 text-center bg-indigo-50/50 font-bold text-indigo-600">51%</td>
+                            <td class="px-6 py-4 text-center text-slate-600">约35%（预估）</td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-bold">雍华公馆</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 font-medium">交通噪音</td>
+                            <td class="px-6 py-4 text-center bg-indigo-50/50 text-yellow-600">靠近高新四路主干道</td>
+                            <td class="px-6 py-4 text-center text-green-600">相对安静</td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs">大都荟</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 font-medium">物业</td>
+                            <td class="px-6 py-4 text-center bg-indigo-50/50">大管家物业</td>
+                            <td class="px-6 py-4 text-center">开发商自持</td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs">相当</span></td>
+                        </tr>
+                        <tr class="bg-slate-50 font-bold">
+                            <td class="px-6 py-4">50万预算适配度</td>
+                            <td class="px-6 py-4 text-center text-indigo-700">⭐⭐⭐⭐⭐ 完美匹配</td>
+                            <td class="px-6 py-4 text-center text-red-600">⭐⭐⭐ 超预算</td>
+                            <td class="px-6 py-4 text-center text-indigo-700">推荐雍华</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="px-6 py-4 bg-indigo-50 border-t border-indigo-100">
+                <p class="text-sm text-indigo-800 flex items-center gap-2">
+                    <i data-lucide="lightbulb" class="w-4 h-4"></i>
+                    <strong>分析师结论：</strong>雍华公馆D区与大都荟同属高新二期核心板块，学区资源同级，但雍华公馆单价低1100元/㎡，50万预算可购100㎡三室（大都荟仅能购90㎡且超预算）。若对噪音不敏感（避开临高新四路楼栋），雍华公馆是更具性价比的选择。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 区域价格地图（更新版） -->
+    <section id="market" class="max-w-7xl mx-auto px-6 mb-16">
+        <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-6 h-6 text-blue-600"></i>
+            区域价格地图（2026年1月更新版）
+        </h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-indigo-500 ring-2 ring-indigo-200 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-20 h-20 bg-indigo-100 rounded-full -mr-10 -mt-10 opacity-50"></div>
+                <div class="flex items-center justify-between mb-4">
+                    <span class="px-3 py-1 bg-indigo-600 text-white rounded-full text-xs font-bold">新增推荐</span>
+                    <i data-lucide="trending-down" class="w-5 h-5 text-green-500"></i>
+                </div>
+                <h4 class="font-bold text-lg mb-1">雍华公馆D区</h4>
+                <p class="text-3xl font-black text-indigo-600 mb-2">¥4,707</p>
+                <p class="text-sm text-slate-500 mb-3">100㎡总价 ≈ 47万</p>
+                <div class="space-y-2 text-xs">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+                        <span>高新三小教育集团</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+                        <span>2020年现房 绿化51%</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-yellow-600">
+                        <i data-lucide="alert-circle" class="w-4 h-4"></i>
+                        <span>临主干道可能有噪音</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover-lift">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-bold">超预算</span>
+                    <i data-lucide="trending-up" class="w-5 h-5 text-slate-400"></i>
+                </div>
+                <h4 class="font-bold text-lg mb-1">大都荟</h4>
+                <p class="text-3xl font-black text-slate-800 mb-2">¥5,800</p>
+                <p class="text-sm text-slate-500 mb-3">90㎡总价 ≈ 52万</p>
+                <div class="space-y-2 text-xs">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+                        <span>高新十一小（北校区）</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+                        <span>距医院1km 交通便利</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-red-500">
+                        <i data-lucide="x-circle" class="w-4 h-4"></i>
+                        <span>50万仅够两室 超预算</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover-lift ring-2 ring-purple-500 ring-offset-2">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-bold">首选</span>
+                    <i data-lucide="award" class="w-5 h-5 text-purple-500"></i>
+                </div>
+                <h4 class="font-bold text-lg mb-1">金台行政中心</h4>
+                <p class="text-3xl font-black text-purple-600 mb-2">¥4,445</p>
+                <p class="text-sm text-slate-500 mb-3">100㎡总价 ≈ 44.5万</p>
+                <div class="space-y-2 text-xs">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+                        <span>性价比最高</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+                        <span>三迪小学学区</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover-lift">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold">学区优</span>
+                    <i data-lucide="graduation-cap" class="w-5 h-5 text-blue-500"></i>
+                </div>
+                <h4 class="font-bold text-lg mb-1">左岸新城</h4>
+                <p class="text-3xl font-black text-slate-800 mb-2">¥4,800</p>
+                <p class="text-sm text-slate-500 mb-3">95㎡总价 ≈ 45.6万</p>
+                <div class="space-y-2 text-xs">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+                        <span>高新二小（高新顶级）</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+                        <span>距高新医院2km</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 小区微观对比（含雍华公馆） -->
+    <section id="compare" class="max-w-7xl mx-auto px-6 mb-16 scroll-mt-20">
+        <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+            <i data-lucide="building-2" class="w-6 h-6 text-indigo-600"></i>
+            目标小区微观对比（含雍华公馆）
+        </h3>
+
+        <div class="bg-white rounded-3xl shadow-lg border border-slate-200 overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead class="bg-slate-50 border-b border-slate-200">
+                        <tr>
+                            <th class="px-4 py-4 text-left font-bold text-slate-700 min-w-[120px]">小区</th>
+                            <th class="px-4 py-4 text-center font-bold text-slate-700">总价</th>
+                            <th class="px-4 py-4 text-center font-bold text-slate-700">单价</th>
+                            <th class="px-4 py-4 text-center font-bold text-slate-700">房龄</th>
+                            <th class="px-4 py-4 text-left font-bold text-slate-700 min-w-[100px]">学区</th>
+                            <th class="px-4 py-4 text-center font-bold text-slate-700">医疗</th>
+                            <th class="px-4 py-4 text-center font-bold text-slate-700">核心缺陷</th>
+                            <th class="px-4 py-4 text-center font-bold text-slate-700">推荐度</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200" id="compareTable">
+                        <tr class="bg-indigo-50/50 hover:bg-indigo-50 transition border-l-4 border-indigo-500">
+                            <td class="px-4 py-4">
+                                <div class="font-bold text-indigo-900">雍华公馆D区</div>
+                                <div class="text-xs text-indigo-600">渭滨-东高新</div>
+                            </td>
+                            <td class="px-4 py-4 text-center"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded font-bold">46-50万</span></td>
+                            <td class="px-4 py-4 text-center font-bold text-indigo-600">4707</td>
+                            <td class="px-4 py-4 text-center"><span class="text-green-600 font-medium">2020年</span></td>
+                            <td class="px-4 py-4 text-xs">高新三小教育集团<br><span class="text-indigo-600">(A区本部/B区十一小)</span></td>
+                            <td class="px-4 py-4 text-center text-xs">三甲1.7km</td>
+                            <td class="px-4 py-4 text-xs text-yellow-600">临高新四路噪音</td>
+                            <td class="px-4 py-4 text-center"><span class="text-xl font-bold text-indigo-600">9.0</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="px-4 py-4">
+                                <div class="font-bold text-slate-800">大都荟</div>
+                                <div class="text-xs text-slate-500">高新二期</div>
+                            </td>
+                            <td class="px-4 py-4 text-center"><span class="px-2 py-1 bg-red-100 text-red-700 rounded font-bold">52-58万</span></td>
+                            <td class="px-4 py-4 text-center font-bold text-slate-800">5800+</td>
+                            <td class="px-4 py-4 text-center"><span class="text-green-600 font-medium">2020年</span></td>
+                            <td class="px-4 py-4 text-xs">高新十一小<br><span class="text-slate-500">(北校区)</span></td>
+                            <td class="px-4 py-4 text-center text-xs">三甲1.0km</td>
+                            <td class="px-4 py-4 text-xs text-red-600">超预算，性价比一般</td>
+                            <td class="px-4 py-4 text-center"><span class="text-xl font-bold text-yellow-600">7.5</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition bg-blue-50/30">
+                            <td class="px-4 py-4">
+                                <div class="font-bold text-slate-800">左岸新城</div>
+                                <div class="text-xs text-slate-500">高新区</div>
+                            </td>
+                            <td class="px-4 py-4 text-center"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded font-bold">40-45万</span></td>
+                            <td class="px-4 py-4 text-center font-bold text-slate-800">4800</td>
+                            <td class="px-4 py-4 text-center"><span class="text-yellow-600 font-medium">2010年</span></td>
+                            <td class="px-4 py-4 text-xs">高新二小<br><span class="text-purple-600 font-bold">(高新顶级)</span></td>
+                            <td class="px-4 py-4 text-center text-xs">高新医院2km</td>
+                            <td class="px-4 py-4 text-xs text-slate-600">50万仅够两室</td>
+                            <td class="px-4 py-4 text-center"><span class="text-xl font-bold text-blue-600">8.8</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="px-4 py-4">
+                                <div class="font-bold text-slate-800">九悦香都</div>
+                                <div class="text-xs text-slate-500">金台行政中心</div>
+                            </td>
+                            <td class="px-4 py-4 text-center"><span class="px-2 py-1 bg-green-100 text-green-700 rounded font-bold">33-40万</span></td>
+                            <td class="px-4 py-4 text-center font-bold text-slate-800">3800</td>
+                            <td class="px-4 py-4 text-center"><span class="text-green-600 font-medium">2015年</span></td>
+                            <td class="px-4 py-4 text-xs">三迪小学<br><span class="text-green-600">(金台重点)</span></td>
+                            <td class="px-4 py-4 text-center text-xs">三甲3km</td>
+                            <td class="px-4 py-4 text-xs text-slate-600">距老城中心远</td>
+                            <td class="px-4 py-4 text-center"><span class="text-xl font-bold text-green-600">9.2</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="px-4 py-4">
+                                <div class="font-bold text-slate-800">凤凰城</div>
+                                <div class="text-xs text-slate-500">陈仓大道</div>
+                            </td>
+                            <td class="px-4 py-4 text-center"><span class="px-2 py-1 bg-green-100 text-green-700 rounded font-bold">45-52万</span></td>
+                            <td class="px-4 py-4 text-center font-bold text-slate-800">4300</td>
+                            <td class="px-4 py-4 text-center"><span class="text-green-600 font-medium">2016年</span></td>
+                            <td class="px-4 py-4 text-xs">卧龙寺小学<br><span class="text-slate-500">(普通)</span></td>
+                            <td class="px-4 py-4 text-center text-xs">三甲4km</td>
+                            <td class="px-4 py-4 text-xs text-slate-600">陈仓大道噪音</td>
+                            <td class="px-4 py-4 text-center"><span class="text-xl font-bold text-slate-600">7.8</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 财务模型更新 -->
+    <section id="finance" class="max-w-7xl mx-auto px-6 mb-16">
+        <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+            <i data-lucide="calculator" class="w-6 h-6 text-green-600"></i>
+            财务模型对比（含雍华公馆方案）
+        </h3>
+
+        <div class="grid lg:grid-cols-2 gap-8 mb-8">
+            <!-- 方案对比表（更新） -->
+            <div class="bg-white rounded-3xl shadow-lg border border-slate-200 overflow-hidden">
+                <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 font-bold text-slate-800">六种购房方案对比（50万预算）</div>
+                <div class="p-6 space-y-3">
+                    <div class="flex justify-between items-center p-4 bg-indigo-50 rounded-xl border-2 border-indigo-200">
+                        <div>
+                            <div class="font-bold text-indigo-900 flex items-center gap-2">
+                                方案F：雍华公馆D区 ⭐推荐
+                                <span class="px-2 py-0.5 bg-indigo-200 text-indigo-800 text-xs rounded">新增</span>
+                            </div>
+                            <div class="text-xs text-indigo-700">108㎡ 三室 毛坯</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-xl font-black text-indigo-600">47万</div>
+                            <div class="text-xs text-green-600">首付9.4万</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center p-4 bg-purple-50 rounded-xl border-2 border-purple-200">
+                        <div>
+                            <div class="font-bold text-purple-900">方案E：公积金最大化</div>
+                            <div class="text-xs text-purple-700">凤凰城 118㎡ 精装</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-lg font-bold text-purple-600">50万</div>
+                            <div class="text-xs text-slate-500">首付10万</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <div>
+                            <div class="font-bold text-slate-800">方案A：九悦香都</div>
+                            <div class="text-xs text-slate-600">100㎡ 毛坯 金台区</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-lg font-bold text-slate-800">40万</div>
+                            <div class="text-xs text-slate-500">首付8万</div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center p-4 bg-red-50 rounded-xl border border-red-200 opacity-75">
+                        <div>
+                            <div class="font-bold text-red-900">方案C：大都荟</div>
+                            <div class="text-xs text-red-700">超预算版 90㎡</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-lg font-bold text-red-800">52万</div>
+                            <div class="text-xs text-red-600">超预算4万</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-6 py-3 bg-slate-50 border-t border-slate-200 text-xs text-slate-600">
+                    <strong>新增说明：</strong>雍华公馆D区较大都荟同面积节省6-8万元，且同为2020年次新房，学区资源同级。
+                </div>
+            </div>
+
+            <!-- 交互式计算器（保持原有功能） -->
+            <div class="bg-white rounded-3xl shadow-lg border border-slate-200 p-6">
+                <h4 class="font-bold text-lg mb-4 flex items-center gap-2">
+                    <i data-lucide="sliders" class="w-5 h-5 text-blue-600"></i>
+                    月供计算器（支持雍华公馆4700单价）
+                </h4>
+                
+                <div class="space-y-4 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">房屋单价（元/㎡）</label>
+                        <div class="flex gap-2 mb-2">
+                            <button onclick="setPrice(4707)" class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded text-xs hover:bg-indigo-200 transition">雍华公馆4707</button>
+                            <button onclick="setPrice(5800)" class="px-3 py-1 bg-slate-100 text-slate-700 rounded text-xs hover:bg-slate-200 transition">大都荟5800</button>
+                            <button onclick="setPrice(4445)" class="px-3 py-1 bg-slate-100 text-slate-700 rounded text-xs hover:bg-slate-200 transition">九悦香都4445</button>
+                        </div>
+                        <input type="number" id="unitPrice" value="4707" class="w-full p-2 border border-slate-300 rounded-lg text-sm mb-1">
+                        <input type="range" id="priceRange" min="3000" max="7000" value="4707" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">面积（㎡）</label>
+                        <input type="range" id="areaRange" min="80" max="140" value="108" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600">
+                        <div class="flex justify-between text-xs text-slate-500 mt-1">
+                            <span>80㎡</span>
+                            <span id="areaValue" class="font-bold text-indigo-600 text-base">108㎡</span>
+                            <span>140㎡</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">首付比例</label>
+                            <select id="downPayment" class="w-full p-2 border border-slate-300 rounded-lg text-sm">
+                                <option value="0.2">20%</option>
+                                <option value="0.3">30%</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">贷款年限</label>
+                            <select id="loanYears" class="w-full p-2 border border-slate-300 rounded-lg text-sm">
+                                <option value="20">20年</option>
+                                <option value="30">30年</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm text-slate-600">房屋总价</span>
+                        <span id="totalPrice" class="font-bold text-slate-800">50.8万</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm text-slate-600">首付金额</span>
+                        <span id="downPaymentAmount" class="font-bold text-slate-800">10.2万</span>
+                    </div>
+                    <div class="border-t border-slate-200 pt-2 mt-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-bold text-slate-700">月供参考</span>
+                            <span id="monthlyPayment" class="text-2xl font-black text-indigo-600">¥2,134</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 交互式决策树（更新） -->
+    <section id="decision" class="max-w-4xl mx-auto px-6 mb-16">
+        <h3 class="text-2xl font-bold mb-6 flex items-center gap-2 justify-center">
+            <i data-lucide="git-branch" class="w-6 h-6 text-pink-600"></i>
+            智能购房决策器（含雍华公馆路径）
+        </h3>
+
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-200 p-8">
+            <div id="decisionTree" class="space-y-6">
+                <!-- 第一步 -->
+                <div class="decision-step" data-step="1">
+                    <h4 class="text-lg font-bold text-center mb-6 text-slate-800">您更倾向于哪个区域？</h4>
+                    <div class="grid grid-cols-3 gap-4">
+                        <button onclick="nextStep(2, 'gaoxin2')" class="p-6 rounded-2xl border-2 border-indigo-200 bg-indigo-50 hover:border-indigo-500 hover:bg-indigo-100 transition text-center group">
+                            <i data-lucide="building-2" class="w-8 h-8 text-indigo-600 mx-auto mb-2"></i>
+                            <div class="font-bold text-indigo-900">高新二期</div>
+                            <div class="text-xs text-indigo-700 mt-1">雍华公馆/大都荟</div>
+                            <div class="text-xs text-slate-500">房龄新、学区好</div>
+                        </button>
+                        <button onclick="nextStep(2, 'gaoxin1')" class="p-6 rounded-2xl border-2 border-slate-200 hover:border-blue-500 hover:bg-blue-50 transition text-center group">
+                            <i data-lucide="home" class="w-8 h-8 text-slate-400 group-hover:text-blue-500 mx-auto mb-2"></i>
+                            <div class="font-bold text-slate-800">高新一期</div>
+                            <div class="text-xs text-slate-500 mt-1">左岸新城</div>
+                            <div class="text-xs text-slate-500">教育顶级</div>
+                        </button>
+                        <button onclick="nextStep(2, 'jintai')" class="p-6 rounded-2xl border-2 border-slate-200 hover:border-purple-500 hover:bg-purple-50 transition text-center group">
+                            <i data-lucide="landmark" class="w-8 h-8 text-slate-400 group-hover:text-purple-500 mx-auto mb-2"></i>
+                            <div class="font-bold text-slate-800">金台区</div>
+                            <div class="text-xs text-slate-500 mt-1">九悦香都</div>
+                            <div class="text-xs text-slate-500">性价比最高</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 动态步骤容器 -->
+                <div class="decision-step hidden" data-step="2">
+                    <!-- 内容动态生成 -->
+                </div>
+
+                <div class="decision-step hidden" data-step="3">
+                    <!-- 内容动态生成 -->
+                </div>
+
+                <!-- 结果展示 -->
+                <div id="decisionResult" class="hidden decision-step">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="check-circle" class="w-8 h-8 text-indigo-600"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-slate-800 mb-2">为您推荐</h4>
+                    </div>
+                    <div id="resultContent" class="bg-slate-50 rounded-2xl p-6 border-2 border-slate-200">
+                        <!-- 动态内容 -->
+                    </div>
+                    <button onclick="resetDecision()" class="w-full mt-6 py-3 bg-slate-800 text-white rounded-xl font-medium hover:bg-slate-700 transition">
+                        重新测试
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 风险提示 -->
+    <section class="max-w-7xl mx-auto px-6 mb-16">
+        <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-3xl p-6 border border-yellow-200 shadow-sm">
+            <h4 class="font-bold text-lg mb-4 flex items-center gap-2 text-yellow-800">
+                <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+                雍华公馆特别风险提示
+            </h4>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h5 class="font-bold text-slate-800 mb-2">噪音问题</h5>
+                    <p class="text-sm text-slate-600">小区靠近高新四路主干道（站南大道与高新四路交汇处），临街的楼栋（特别是东侧和北侧）可能存在交通噪音。建议选择：<strong>小区中心位置的楼栋</strong>或<strong>南侧临湖（人工湖）的楼栋</strong>。</p>
+                </div>
+                <div>
+                    <h5 class="font-bold text-slate-800 mb-2">学区确认</h5>
+                    <p class="text-sm text-slate-600">雍华公馆分为A/B/C/D多个区，<strong>A区划片高新三小西校区（本部）</strong>，<strong>B区划片高新三小北校区（高新十一小）</strong>，购房前务必确认具体楼栋对应的学区划分，避免买错区域。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-slate-900 text-slate-400 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center gap-6 mb-6">
+                <i data-lucide="shield" class="w-6 h-6"></i>
+                <i data-lucide="home" class="w-6 h-6"></i>
+                <i data-lucide="heart" class="w-6 h-6"></i>
+            </div>
+            <p class="text-sm mb-2">数据来源：安居客2026年1月挂牌数据、宝鸡市教育局2025年学区划分、贝壳找房成交记录</p>
+            <p class="text-xs text-slate-600">特别鸣谢：雍华公馆D区成交数据（50.8万/115.61㎡）来自贝壳找房公开信息</p>
+        </div>
+    </footer>
+
+    <script>
+        // 初始化图标
+        lucide.createIcons();
+
+        // 决策树逻辑（更新版）
+        let decisions = {};
+        
+        function nextStep(step, value) {
+            decisions[step] = value;
+            
+            if (step === 2) {
+                const step2Div = document.querySelector('[data-step="2"]');
+                step2Div.classList.remove('hidden');
+                document.querySelector('[data-step="1"]').classList.add('hidden');
+                
+                let html = '';
+                if (value === 'gaoxin2') {
+                    html = `
+                        <div class="flex items-center gap-2 mb-6 text-sm text-slate-500">
+                            <button onclick="backStep(1)" class="hover:text-blue-600 flex items-center gap-1">
+                                <i data-lucide="arrow-left" class="w-4 h-4"></i> 返回
+                            </button>
+                            <span>|</span>
+                            <span>高新二期 - Step 2</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-center mb-6 text-slate-800">您更看重新房还是性价比？</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <button onclick="showResult('yonghua')" class="p-6 rounded-2xl border-2 border-indigo-200 bg-indigo-50 hover:border-indigo-500 transition text-center">
+                                <div class="text-3xl font-bold text-indigo-600 mb-1">47万</div>
+                                <div class="font-bold text-indigo-900">雍华公馆</div>
+                                <div class="text-xs text-indigo-700 mt-1">108㎡三室 | 单价4700</div>
+                                <div class="text-xs text-slate-500 mt-1">性价比优先</div>
+                            </button>
+                            <button onclick="showResult('dadu')" class="p-6 rounded-2xl border-2 border-slate-200 hover:border-red-300 hover:bg-red-50 transition text-center">
+                                <div class="text-3xl font-bold text-slate-800 mb-1">52万</div>
+                                <div class="font-bold text-slate-800">大都荟</div>
+                                <div class="text-xs text-slate-600 mt-1">90㎡两室 | 单价5800</div>
+                                <div class="text-xs text-slate-500 mt-1">位置核心但超预算</div>
+                            </button>
+                        </div>
+                    `;
+                } else if (value === 'gaoxin1') {
+                    html = `
+                        <div class="flex items-center gap-2 mb-6 text-sm text-slate-500">
+                            <button onclick="backStep(1)" class="hover:text-blue-600 flex items-center gap-1">
+                                <i data-lucide="arrow-left" class="w-4 h-4"></i> 返回
+                            </button>
+                            <span>|</span>
+                            <span>高新一期 - Step 2</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-center mb-6 text-slate-800">左岸新城是您的最佳选择</h4>
+                        <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 text-center">
+                            <div class="text-2xl font-bold text-blue-900 mb-2">左岸新城</div>
+                            <p class="text-sm text-blue-800 mb-4">高新二小顶级学区，40-45万可购95㎡两室</p>
+                            <button onclick="resetDecision()" class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm">完成</button>
+                        </div>
+                    `;
+                } else {
+                    html = `
+                        <div class="flex items-center gap-2 mb-6 text-sm text-slate-500">
+                            <button onclick="backStep(1)" class="hover:text-blue-600 flex items-center gap-1">
+                                <i data-lucide="arrow-left" class="w-4 h-4"></i> 返回
+                            </button>
+                            <span>|</span>
+                            <span>金台区 - Step 2</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-center mb-6 text-slate-800">九悦香都是您的最佳选择</h4>
+                        <div class="bg-purple-50 p-6 rounded-xl border border-purple-200 text-center">
+                            <div class="text-2xl font-bold text-purple-900 mb-2">九悦香都</div>
+                            <p class="text-sm text-purple-800 mb-4">性价比之王，33-40万可购100㎡三室</p>
+                            <button onclick="resetDecision()" class="px-4 py-2 bg-purple-600 text-white rounded-lg text-sm">完成</button>
+                        </div>
+                    `;
+                }
+                step2Div.innerHTML = html;
+                lucide.createIcons();
+            }
+        }
+        
+        function backStep(step) {
+            document.querySelectorAll('.decision-step').forEach(el => el.classList.add('hidden'));
+            document.querySelector(`[data-step="${step}"]`).classList.remove('hidden');
+        }
+        
+        function resetDecision() {
+            decisions = {};
+            document.querySelectorAll('.decision-step').forEach(el => el.classList.add('hidden'));
+            document.querySelector('[data-step="1"]').classList.remove('hidden');
+            document.getElementById('decisionResult').classList.add('hidden');
+        }
+        
+        function showResult(type) {
+            document.querySelectorAll('.decision-step').forEach(el => el.classList.add('hidden'));
+            const resultDiv = document.getElementById('decisionResult');
+            const contentDiv = document.getElementById('resultContent');
+            resultDiv.classList.remove('hidden');
+            
+            if (type === 'yonghua') {
+                contentDiv.innerHTML = `
+                    <div class="text-center">
+                        <h5 class="text-xl font-bold text-indigo-800 mb-2">雍华公馆D区（首选推荐）</h5>
+                        <p class="text-sm text-slate-600 mb-4">高新二期性价比之王，50万预算内最优解</p>
+                        <div class="grid grid-cols-2 gap-4 text-left mt-4">
+                            <div class="bg-white p-3 rounded-lg border border-slate-200">
+                                <div class="text-xs text-slate-500">总价</div>
+                                <div class="font-bold text-indigo-600">46-50万</div>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-slate-200">
+                                <div class="text-xs text-slate-500">面积</div>
+                                <div class="font-bold text-indigo-600">108㎡三室</div>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-slate-200">
+                                <div class="text-xs text-slate-500">学区</div>
+                                <div class="font-bold text-indigo-600">高新三小集团</div>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-slate-200">
+                                <div class="text-xs text-slate-500">优势</div>
+                                <div class="font-bold text-indigo-600">比大都荟省6-8万</div>
+                            </div>
+                        </div>
+                        <div class="mt-4 p-3 bg-yellow-50 rounded-lg border border-yellow-200 text-left">
+                            <p class="text-xs text-yellow-800"><strong>⚠️ 注意：</strong>选择远离高新四路的楼栋，避免噪音影响。</p>
+                        </div>
+                    </div>
+                `;
+            } else if (type === 'dadu') {
+                contentDiv.innerHTML = `
+                    <div class="text-center">
+                        <h5 class="text-xl font-bold text-slate-800 mb-2">大都荟（备选）</h5>
+                        <p class="text-sm text-red-600 mb-4">预算超标，性价比不如雍华公馆</p>
+                        <div class="bg-red-50 p-4 rounded-xl border border-red-200 text-left">
+                            <p class="text-sm text-red-800">虽然位置更核心（距医院1km），但单价高1100元/㎡，50万仅够90㎡两室且超预算。建议优先考虑雍华公馆。</p>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            lucide.createIcons();
+        }
+
+        // 房贷计算器功能（更新版）
+        function setPrice(price) {
+            document.getElementById('unitPrice').value = price;
+            document.getElementById('priceRange').value = price;
+            calculateLoan();
+        }
+
+        const unitPriceInput = document.getElementById('unitPrice');
+        const priceRange = document.getElementById('priceRange');
+        const areaRange = document.getElementById('areaRange');
+        const areaValue = document.getElementById('areaValue');
+        
+        function calculateLoan() {
+            const unitPrice = parseInt(unitPriceInput.value) || 4707;
+            const area = parseInt(areaRange.value);
+            const downPaymentRatio = parseFloat(document.getElementById('downPayment').value);
+            const years = parseInt(document.getElementById('loanYears').value);
+            
+            const totalPrice = (unitPrice * area / 10000).toFixed(1);
+            const downPayment = (totalPrice * downPaymentRatio).toFixed(1);
+            const loanAmount = (totalPrice - downPayment).toFixed(1);
+            
+            const rate = 0.0355; // 商贷利率3.55%
+            const months = years * 12;
+            const monthlyRate = rate / 12;
+            const monthlyPayment = (loanAmount * 10000 * monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
+            
+            document.getElementById('totalPrice').textContent = totalPrice + '万';
+            document.getElementById('downPaymentAmount').textContent = downPayment + '万';
+            document.getElementById('monthlyPayment').textContent = '¥' + Math.round(monthlyPayment).toLocaleString();
+            areaValue.textContent = area + '㎡';
+        }
+        
+        unitPriceInput.addEventListener('input', calculateLoan);
+        priceRange.addEventListener('input', (e) => {
+            unitPriceInput.value = e.target.value;
+            calculateLoan();
+        });
+        areaRange.addEventListener('input', calculateLoan);
+        document.getElementById('downPayment').addEventListener('change', calculateLoan);
+        document.getElementById('loanYears').addEventListener('change', calculateLoan);
+        
+        calculateLoan(); // 初始化
+
+        // Chart.js 图表（保持）
+        const ctx = document.getElementById('financeChart')?.getContext('2d');
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['雍华公馆', '大都荟', '左岸新城', '九悦香都', '凤凰城'],
+                    datasets: [{
+                        label: '50万可购面积（㎡）',
+                        data: [108, 90, 95, 113, 116],
+                        backgroundColor: [
+                            'rgba(99, 102, 241, 0.8)',  // 雍华-靛蓝
+                            'rgba(239, 68, 68, 0.8)',   // 大都荟-红
+                            'rgba(59, 130, 246, 0.8)',  // 左岸-蓝
+                            'rgba(168, 85, 247, 0.8)',  // 九悦-紫
+                            'rgba(16, 185, 129, 0.8)'   // 凤凰-绿
+                        ],
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        title: { display: true, text: '50万预算在各小区可购买面积对比' }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: { display: true, text: '面积（㎡）' }
+                        }
+                    }
+                }
+            });
+        }
+
+        // 页面滚动动画
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
